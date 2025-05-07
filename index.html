@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFlix - Ultimate Movie Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./images/icone.webp">
+
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 px-4 py-3 md:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-10">
+                <a href="#" class="text-3xl font-bold text-primary" style="color: var(--primary);">CineFlix</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-white hover:text-gray-300 transition">Home</a>
+                    <div class="dropdown relative">
+                        <button class="text-white hover:text-gray-300 transition flex items-center">
+                            Movies <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu absolute hidden mt-2 py-2 w-48 bg-gray-900 rounded-md shadow-lg z-50">
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-gray-800">Popular</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-gray-800">Now Playing</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-gray-800">Upcoming</a>
+                            <a href="#" class="block px-4 py-2 text-white hover:bg-gray-800">Top Rated</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-white hover:text-gray-300 transition">TV Shows</a>
+                    <a href="#" class="text-white hover:text-gray-300 transition">Celebrities</a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Search movies..." class="bg-gray-800 bg-opacity-70 text-white px-4 py-1 rounded-full w-40 focus:w-60 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="text-white">
+                    <i class="fas fa-bell text-xl"></i>
+                </button>
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer">
+                    <i class="fas fa-user text-white"></i>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero relative flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="md:w-1/2">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in">Avengers: Endgame</h1>
+                <div class="flex items-center mb-6 space-x-4 fade-in delay-1">
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <span class="font-medium">8.4/10</span>
+                    </div>
+                    <span>2019</span>
+                    <span class="bg-gray-700 px-2 py-1 rounded text-xs font-bold">3h 1m</span>
+                    <span class="bg-red-600 px-2 py-1 rounded text-xs font-bold">PG-13</span>
+                </div>
+                <p class="text-gray-300 mb-8 text-lg fade-in delay-2">After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.</p>
+                <div class="flex space-x-4 fade-in delay-3">
+                    <button class="btn-primary px-8 py-3 rounded-full font-bold flex items-center play-btn">
+                        <i class="fas fa-play play-icon mr-2"></i> Play Trailer
+                    </button>
+                    <button class="btn-secondary px-6 py-3 rounded-full font-bold flex items-center">
+                        <i class="fas fa-plus mr-2"></i> My List
+                    </button>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-2 fade-in delay-4">
+                    <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-sm">Action</span>
+                    <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-sm">Adventure</span>
+                    <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-sm">Sci-Fi</span>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-10"></div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Trending Now -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold">All</h2>
+                <a href="#" class="text-primary hover:underline font-medium">View All</a>
+            </div>
+            <div class="relative">
+                <div class="scroll-container flex space-x-6 overflow-x-auto pb-6 -mx-4 px-4">
+                    <!-- Movie 1 -->
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-yellow-500 text-black border-yellow-600">8.7</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" alt="Spider-Man: No Way Home" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                  <a href="https://theflixertv.to/watch-movie/watch-spider-man-no-way-home-full-71326.5601538" target="_blank"> <i  class="fas fa-play mr-2"></i> Watch Now</a> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">Spider-Man: No Way Home</h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2021</span>
+                                <span>Action</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
+
+
+
+                    <!-- Movie 1 -->
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-yellow-500 text-black border-yellow-600">8.7</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/dexter.webp" alt="Dexter" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                  <a href="https://theflixertv.to/tv/watch-dexter-full-39448" target="_blank"> <i  class="fas fa-play mr-2"></i> Watch Now</a> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">Dexter</h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2009</span>
+                                <span>Crime, Drama, Mystery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Movie 1 -->
+                    <!-- Movie 1 -->
+
+
+
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-yellow-500 text-black border-yellow-600">8.7</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/Matt Damon (Good Will Hunting).webp" alt="Good will Hunting" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                  <a href="https://theflixertv.to/watch-movie/watch-good-will-hunting-full-18982.5349589" target="_blank"> <i  class="fas fa-play mr-2"></i> Watch Now</a> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">Good will Hunting</h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>1997</span>
+                                <span>Romance/Drama </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Movie 1 -->
+
+                    <!-- Movie 1 -->
+
+
+
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-yellow-500 text-black border-yellow-600">8.2</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/Robert De Niro.webp" alt="Taxi Driver
+                            " class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                  <a href="https://theflixertv.to/watch-movie/watch-taxi-driver-full-19066.5298541" target="_blank"> <i  class="fas fa-play mr-2"></i> Watch Now</a> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">Taxi Driver
+                            </h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>1976 </span>
+                                <span> Crime/Noir</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Movie 1 -->
+                    <!-- Movie 1 -->
+
+
+
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-yellow-500 text-black border-yellow-600">8.</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/Oppenheimer (2023).webp" alt="Oppenheimer
+                            " class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                  <a href="https://theflixertv.to/watch-movie/watch-oppenheimer-full-98446.9759013" target="_blank"> <i  class="fas fa-play mr-2"></i> Watch Now</a> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">TOppenheimer
+                            </h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2023 </span>
+                                <span> Thriller/Historical drama</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Movie 1 -->
+
+
+
+
+
+
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-yellow-500 text-black border-yellow-600">7.7</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/the vampire.webp" alt="Dexter" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                  <a href="https://theflixertv.to/tv/watch-the-vampire-diaries-full-39488" target="_blank"> <i  class="fas fa-play mr-2"></i> Watch Now</a> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">The Vampire Diaries
+                            </h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2009</span>
+                                <span> Drama</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Movie 1 -->
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-yellow-500 text-black border-yellow-600">8.5</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/mr-robot.webp" alt="Mr.Robot" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                  <a href="https://theflixertv.to/tv/watch-mr-robot-full-39403" target="_blank"> <i  class="fas fa-play mr-2"></i> Watch Now</a> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">Mr. Robot
+                            </h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2015 </span>
+                                <span> Thriller </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
+
+
+                    <!-- Movie 2 -->
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-green-500 text-black border-green-600">7.9</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/dune.webp" alt="Dune" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                 <a href="https://theflixertv.to/watch-movie/watch-dune-full-6752.4650076" target="_blanks"><i class="fas fa-play mr-2"></i> Watch Now</a>   
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">Dune</h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2021</span>
+                                <span>Sci-Fi</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie 3 -->
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-purple-500 text-black border-purple-600">7.6</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/batman.webp" alt="The Batman" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                  <a target="_blank" href="https://theflixertv.to/watch-movie/watch-the-batman-full-16076.8142442"> <i class="fas fa-play mr-2"></i> Watch Now</a> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">The Batman</h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2022</span>
+                                <span>Crime</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie 4 -->
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-blue-500 text-black border-blue-600">8.5</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="https://image.tmdb.org/t/p/w500/1BIoJGKbXjdFDAqUEiA2VHqkK1Z.jpg" alt="Shang-Chi" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                   <a href="https://theflixertv.to/watch-movie/watch-shang-chi-and-the-legend-of-the-ten-rings-full-66668.4620829"><i class="fas fa-play mr-2"></i> Watch Now</a>  
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">Shang-Chi</h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2021</span>
+                                <span>Action</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie 5 -->
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-red-500 text-black border-red-600">7.3</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/not time to die.webp" alt="No Time to Die" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                    <a target="_blank" href="  https://theflixertv.to/watch-movie/watch-no-time-to-die-full-18445.4685725"><i class="fas fa-play mr-2"></i> Watch Now</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">No Time to Die</h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2021</span>
+                                <span>Action</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Movie 6 -->
+                    <div class="movie-card flex-shrink-0 w-48 md:w-56 bg-gray-900 rounded-xl overflow-hidden relative group">
+                        <div class="rating-badge bg-pink-500 text-black border-pink-600">7.8</div>
+                        <div class="movie-poster relative overflow-hidden rounded-xl">
+                            <img src="./images/eternal.webp" alt="Eternals" class="w-full h-64 md:h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button class="btn-primary w-full py-2 rounded-full font-medium">
+                                   <a target="_blank" href="https://theflixertv.to/watch-movie/watch-eternals-full-73555.4792213"> <i class="fas fa-play mr-2"></i> Watch Now</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="font-bold text-sm md:text-base mb-1">Eternals</h3>
+                            <div class="flex justify-between text-xs text-gray-400">
+                                <span>2021</span>
+                                <span>Adventure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Movies -->
+        <section class="mb-16">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold">Popular Movies</h2>
+                <a href="#" class="text-primary hover:underline font-medium">View All</a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Movie 1 -->
+                <div class="movie-card bg-gray-900 rounded-xl overflow-hidden relative group">
+                    <div class="rating-badge bg-yellow-500 text-black border-yellow-600">9.2</div>
+                    <div class="movie-poster relative overflow-hidden rounded-xl">
+                        <img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="The Godfather" class="w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <button class="btn-primary w-full py-2 rounded-full font-medium">
+                         <a href="https://theflixertv.to/watch-movie/watch-the-godfather-full-19629.5297527" target="_blank">  <i class="fas fa-play mr-2"></i> Watch Now</a>     
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">The Godfather</h3>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-xs">Crime</span>
+                            <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-xs">Drama</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-4">The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">1972</span>
+                            <button class="text-primary hover:underline text-sm font-medium">
+                                More Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Movie 2 -->
+                <div class="movie-card bg-gray-900 rounded-xl overflow-hidden relative group">
+                    <div class="rating-badge bg-yellow-500 text-black border-yellow-600">9.0</div>
+                    <div class="movie-poster relative overflow-hidden rounded-xl">
+                        <img src="https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" alt="The Shawshank Redemption" class="w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <button class="btn-primary w-full py-2 rounded-full font-medium">
+                               <a href="https://theflixertv.to/watch-movie/watch-the-shawshank-redemption-full-19679.2518885">    <i class="fas fa-play mr-2"></i> Watch Now</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">The Shawshank Redemption</h3>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-xs">Drama</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-4">Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">1994</span>
+                            <button class="text-primary hover:underline text-sm font-medium">
+                                More Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Movie 3 -->
+                <div class="movie-card bg-gray-900 rounded-xl overflow-hidden relative group">
+                    <div class="rating-badge bg-yellow-500 text-black border-yellow-600">8.9</div>
+                    <div class="movie-poster relative overflow-hidden rounded-xl">
+                        <img src="https://image.tmdb.org/t/p/w500/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg" alt="The Dark Knight" class="w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <button class="btn-primary w-full py-2 rounded-full font-medium">
+                             <a href="https://theflixertv.to/watch-movie/watch-the-dark-knight-full-19752.5297326" target="_blank"> <i class="fas fa-play mr-2"></i> Watch Now</a>  
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">The Dark Knight</h3>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-xs">Action</span>
+                            <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-xs">Crime</span>
+                            <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-xs">Drama</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-4">When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">2008</span>
+                            <button class="text-primary hover:underline text-sm font-medium">
+                                More Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Movie 4 -->
+                <div class="movie-card bg-gray-900 rounded-xl overflow-hidden relative group">
+                    <div class="rating-badge bg-yellow-500 text-black border-yellow-600">8.8</div>
+                    <div class="movie-poster relative overflow-hidden rounded-xl">
+                        <img src="https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg" alt="Forrest Gump" class="w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <button class="btn-primary w-full py-2 rounded-full font-medium">
+                               <a target="_blank" href="https://theflixertv.to/watch-movie/watch-forrest-gump-full-19710.5297422"><i class="fas fa-play mr-2"></i> Watch Now</a>       
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Forrest Gump</h3>
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-xs">Crime</span>
+                            <span class="genre-tag bg-gray-800 px-3 py-1 rounded-full text-xs">Drama</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-4">The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-400 text-sm">1994</span>
+                            <button class="text-primary hover:underline text-sm font-medium">
+                                More Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   
+
+        <!-- Movie Genres -->
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8">Browse by Genre</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="./action.html" class="genre-tag bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-explosion text-2xl mb-2 block"></i>
+                    <div>Action</div>
+                </a>
+                <a href="#" class="genre-tag bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-laugh-beam text-2xl mb-2 block"></i>
+                    <div>Comedy</div>
+                </a>
+                <a href="#" class="genre-tag bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-robot text-2xl mb-2 block"></i>
+                    <div>Sci-Fi</div>
+                </a>
+                <a href="#" class="genre-tag bg-purple-600 hover:bg-purple-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-ghost text-2xl mb-2 block"></i>
+                    <div>Horror</div>
+                </a>
+                <a href="#" class="genre-tag bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-heart text-2xl mb-2 block"></i>
+                    <div>Romance</div>
+                </a>
+                <a href="#" class="genre-tag bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-mask text-2xl mb-2 block"></i>
+                    <div>Fantasy</div>
+                </a>
+                <a href="#" class="genre-tag bg-pink-600 hover:bg-pink-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-music text-2xl mb-2 block"></i>
+                    <div>Musical</div>
+                </a>
+                <a href="#" class="genre-tag bg-gray-600 hover:bg-gray-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-user-secret text-2xl mb-2 block"></i>
+                    <div>Thriller</div>
+                </a>
+                <a href="#" class="genre-tag bg-teal-600 hover:bg-teal-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-child text-2xl mb-2 block"></i>
+                    <div>Animation</div>
+                </a>
+                <a href="#" class="genre-tag bg-orange-600 hover:bg-orange-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-history text-2xl mb-2 block"></i>
+                    <div>History</div>
+                </a>
+                <a href="#" class="genre-tag bg-amber-600 hover:bg-amber-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-user-astronaut text-2xl mb-2 block"></i>
+                    <div>Adventure</div>
+                </a>
+                <a href="#" class="genre-tag bg-lime-600 hover:bg-lime-700 text-white px-6 py-4 rounded-xl text-center font-bold">
+                    <i class="fas fa-microscope text-2xl mb-2 block"></i>
+                    <div>Documentary</div>
+                </a>
+            </div>
+        </section>
+
+      
+                     
+     
+        <!-- Newsletter -->
+        <section class="mb-16 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-8 md:p-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated with the Latest Movies</h2>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">Subscribe to our newsletter to get the latest movie news, reviews, and recommendations straight to your inbox.</p>
+                <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                    <input type="email" placeholder="Your email address" class="flex-grow bg-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    <button class="btn-primary px-6 py-3 rounded-lg font-bold">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-white font-bold text-xl mb-4">CineFlix</h3>
+                    <p class="text-gray-400 mb-4">The ultimate destination for movie lovers. Discover, watch, and enjoy the best films from around the world.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/profile.php?id=100090940504695" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://x.com/omaarremaad" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i> 
+                        </a>
+                        <a href="https://www.instagram.com/omaremad212/" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Navigation</h3>
+                    <ul class="space-y-2">
+                        <li><a href="./index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Movies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">TV Shows</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Celebrities</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">News</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="./action.html" target="_blank" class="text-gray-400 hover:text-white transition">Action</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Comedy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Drama</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Horror</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sci-Fi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Terms of Use</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">DMCA</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-gray-400 text-sm text-center">© 2023 CineFlix. All rights reserved. Made with <i class="fas fa-heart text-primary"></i> for movie lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Trailer Modal -->
+    <div class="trailer-modal fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl">
+            <button class="absolute -top-12 right-0 text-white text-3xl hover:text-primary transition">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-96 md:h-[500px]" src="https://www.youtube.com/embed/TcMBFSGVi1c" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+<script src="./main.js"></script>
+</body>
+</html>
